@@ -85,7 +85,7 @@ public class SBinTre<T> {
 
     public boolean leggInn(T verdi)  {
 
-        // Programkode 5.2.3 A brukt
+        // Programkode 5.2.3A brukt
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
         Node<T> p = rot, q = null;
@@ -117,7 +117,8 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> p = rot;
+        int verdier = 0;
     }
 
     public void nullstill() {
