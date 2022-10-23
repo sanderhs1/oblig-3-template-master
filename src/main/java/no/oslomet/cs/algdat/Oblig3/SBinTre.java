@@ -142,16 +142,20 @@ public class SBinTre<T> {
             {
                 if (p.venstre != null) p = p.venstre;
                 else if (p.høyre != null) p = p.høyre;
-                else{
-                    return p;
-            }
+                else return p;
+
         }
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
- // hvis p er den siste i postorden returner 0
-        // returnere noden som kommer etter p i postorden
+        if (p.forelder == null) { //rot noden
+            return null;
+        }
+     // 1. Sjekke om p er høyre eller venstre, for å gå videre.
+        // er p høyre så går vi til foreldre, er p venstre så sjekker vi om det finnes høye hvis ikke så går den til foreldre
     }
+
+
 
     public void postorden(Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
