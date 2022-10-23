@@ -149,7 +149,8 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-
+ // hvis p er den siste i postorden returner 0
+        // returnere noden som kommer etter p i postorden
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
