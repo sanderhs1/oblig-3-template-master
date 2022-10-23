@@ -117,8 +117,20 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        Node<T> p = rot;
-        int verdier = 0;
+        Node<T> p = rot; //node
+        int verdier = 0; // antall forekomster av verdi
+        while(p != null)
+        {
+            int compare = comp.compare(verdi,p.verdi); //sammenlikner verdi og p.verdi og returnerer 0 hvis verdi=p.verdi -1 hvis veri<p.verdi 1 hvis omvendt
+            if(compare <0)
+                p = p.venstre;
+            else{
+                if(compare ==0)
+                    verdier++; // legger på antall forekomster av verdi
+                p=p.høyre;
+            }
+        }
+        return verdier;
     }
 
     public void nullstill() {
