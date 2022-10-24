@@ -201,6 +201,7 @@ public class SBinTre<T> {
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         // ta arrayet og legge inn alle verdiene i nivåå orden og gjenskape binærtreet
+        // SBinTRe<Integer> tre = new SBinTre<>(c) regner jeg må brukes, leggInn kan vel også brukes videre
     }
 
 
