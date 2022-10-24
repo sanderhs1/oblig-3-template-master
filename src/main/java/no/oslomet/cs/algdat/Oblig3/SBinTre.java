@@ -187,11 +187,11 @@ public class SBinTre<T> {
         oppgave.utførOppgave(p.verdi);
     }
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //iterativ bruke kø til å traversere treet i nivå orden, returneres array, verdi i alle nodene i nivå orden
     }
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // ta arrayet og legge inn alle verdiene i nivåå orden og gjenskape binærtreet
     }
 
 
