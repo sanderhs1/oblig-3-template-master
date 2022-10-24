@@ -98,13 +98,14 @@ public class SBinTre<T> {
             p = cmp < 0 ? p.venstre : p.høyre;
         }
 
-        p = new Node<>(verdi,null);
+        p = new Node<>(verdi,q);
 
         if (q == null) rot = p;
         else if (cmp < 0) q.venstre = p;
         else q.høyre = p;
 
         antall++;
+        endringer++;
         return true;
     }
 
@@ -150,6 +151,15 @@ public class SBinTre<T> {
     private static <T> Node<T> nestePostorden(Node<T> p) {
         if (p.forelder == null) { //rot noden
             return null;
+        }
+        if(p.forelder.høyre == null){ // ser om det finnes et høyre barn
+            return p.forelder;
+        }
+        else if(p.forelder.høyre == p){ // sjekker om det er høyrebarn
+            return p.forelder;
+        }
+        else{
+            return førstePostorden(p.forelder.høyre);
         }
      // 1. Sjekke om p er høyre eller venstre, for å gå videre.
         // er p høyre så går vi til foreldre, er p venstre så sjekker vi om det finnes høye hvis ikke så går den til foreldre
