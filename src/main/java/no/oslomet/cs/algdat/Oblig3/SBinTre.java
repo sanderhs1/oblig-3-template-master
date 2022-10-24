@@ -161,8 +161,6 @@ public class SBinTre<T> {
         else{
             return førstePostorden(p.forelder.høyre);
         }
-     // 1. Sjekke om p er høyre eller venstre, for å gå videre.
-        // er p høyre så går vi til foreldre, er p venstre så sjekker vi om det finnes høye hvis ikke så går den til foreldre
     }
 
 
@@ -173,7 +171,7 @@ public class SBinTre<T> {
         p = førstePostorden(p); // første i postorden
         while(p != null){
             oppgave.utførOppgave(p.verdi);
-            p = nestePostorden(p);
+            p = nestePostorden(p); // bruker nestePostorden i en while løkke
         }
     }
 
@@ -182,9 +180,12 @@ public class SBinTre<T> {
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (p.venstre != null) // traverserer i postorden rekkefølge venstre->høyre->rot
+            postordenRecursive(p.venstre,oppgave); // kaller seg selv (rekursiv metode)
+        if (p.høyre != null)
+            postordenRecursive(p.høyre,oppgave);
+        oppgave.utførOppgave(p.verdi);
     }
-
     public ArrayList<T> serialize() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
