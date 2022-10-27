@@ -144,7 +144,6 @@ public class SBinTre<T> {
         }
 
         antall--;
-        endringer++;
         return true;
     }
 
@@ -175,8 +174,14 @@ public class SBinTre<T> {
     }
 
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+        Node <T> p = førstePostorden(rot);
+        while(!tom()){
+            if(p==rot) rot=null;
+            else if(p.venstre!=null) p.venstre=null;
+            else if(p.høyre!=null)p.høyre=null;
+            }
+        antall--;
+        }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
             while (true)
