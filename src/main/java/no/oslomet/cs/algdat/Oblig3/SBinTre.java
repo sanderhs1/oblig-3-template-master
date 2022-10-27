@@ -144,11 +144,13 @@ public class SBinTre<T> {
         }
 
         antall--;
+        endringer++;
         return true;
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // 1. lage en variabel for forekomstene av verdi
+        // 2. Bruke fjern metoden, for å øke variabelen for forekomstene av verdi også returnere den variablen.
     }
 
     public int antall(T verdi) {
