@@ -150,7 +150,11 @@ public class SBinTre<T> {
 
     public int fjernAlle(T verdi) {
         // 1. lage en variabel for forekomstene av verdi
+        int verdiforekomst = 0;
         // 2. Bruke fjern metoden, for å øke variabelen for forekomstene av verdi også returnere den variablen.
+        while(fjern(verdi))
+            verdiforekomst++;
+        return verdiforekomst;
     }
 
     public int antall(T verdi) {
